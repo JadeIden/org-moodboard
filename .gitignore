@@ -1,0 +1,10 @@
+*.o
+*.hi
+/dist/
+/TAGS
+<<<<<<< Updated upstream
+/dist-newstyle/
+=======
+hie.yaml
+>>>>>>> Stashed changes
+/newdist/

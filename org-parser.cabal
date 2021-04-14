@@ -1,0 +1,72 @@
+cabal-version:      2.4
+name:               org-parser
+version:            0.1.0.0
+
+-- A short (one-line) description of the package.
+-- synopsis:
+
+-- A longer description of the package.
+-- description:
+
+-- A URL where users can report bugs.
+-- bug-reports:
+
+-- The license under which the package is released.
+-- license:
+
+-- The package author(s).
+-- author:
+
+-- An email address to which users can send suggestions, bug reports, and patches.
+-- maintainer:
+
+-- A copyright notice.
+-- copyright:
+-- category:
+extra-source-files: CHANGELOG.md
+
+executable org-parser
+    main-is:          Main.hs
+
+    -- Modules included in this executable, other than Main.
+    other-modules:    Tree, Layout, Parser, Logic, Helpers, Files, Config, Models,
+                      Components.Accordion, Components.Images, Components.Grid
+
+    -- LANGUAGE extensions used by modules in this package.
+    -- other-extensions:
+    build-depends:    base ^>=4.14.1.0,
+                      base64-bytestring ^>= 1.1.0.0,
+                      blaze-html ^>= 0.9.1.2,
+                      bytestring ^>= 0.10.12.0,
+                      containers ^>= 0.6.2.1,
+                      filepath ^>= 1.4.2.1,
+                      http-media ^>=0.8.0.0,
+                      lens ^>= 5.0.1,
+                      mtl ^>= 2.2.2,
+                      parsec ^>= 3.1.14.0,
+                      safe-exceptions,
+                      servant ^>= 0.18.2,
+                      servant-server ^>= 0.18.2,
+                      utf8-string ^>= 1.0.2,
+                      warp ^>= 3.3.14
+                      -- safe-exceptions ^>= 0.1.7.1
+    hs-source-dirs:   .
+    default-language: Haskell2010
+
+test-suite test-org-parser
+    type:           exitcode-stdio-1.0
+    main-is:        Test/Main.hs
+
+    other-modules:  Test.Parser, Test.Helpers, Models, Parser, Tree
+
+    hs-source-dirs: .
+    default-language: Haskell2010
+
+    build-depends:  base,
+                    mtl ^>= 2.2.2,
+                    lens ^>= 5.0.1,
+                    parsec ^>= 3.1.14.0,
+                    test-framework,
+                    test-framework-hunit,
+                    HUnit ^>= 1.6.2.0,
+                    Cabal ^>= 3.2.1.0
